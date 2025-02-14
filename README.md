@@ -1,48 +1,53 @@
-# AI PC Configurator - Your Smart AI PC Builder
+# AI Hardware Identifier
 
-## 🚀 What is AI PC Configurator?
+## 🚀 Overview
+**AI Hardware Identifier** is an AI-powered tool that leverages Google's **Gemini API** to accurately recognize and classify PC hardware components from images and text descriptions. Whether you're scanning a motherboard, GPU, CPU, or any other PC component, this project helps identify, analyze, and retrieve relevant specifications with ease.
 
-AI PC Configurator is an intelligent system that helps you design the perfect PC build based on your budget, preferences, and performance needs! Whether you're a gamer, content creator, or developer, this AI-powered tool suggests the best combination of components for your dream machine.
+## 🛠️ How It Works
+1. Upload an **image** or enter a **text description** of a PC component.
+2. The **Gemini API** processes the input to identify the hardware type (CPU, GPU, RAM, etc.).
+3. The system retrieves detailed specifications, compatibility insights, and related data.
 
-### 🛠️ How It Works:
-Simply input your **budget** or **specific components**, and let AI PC Configurator recommend the perfect parts for your build. It intelligently selects compatible components such as CPUs, GPUs, RAM, storage, and more to give you an optimized system at the best price.
+## 🔥 Features
+- **AI-Powered Component Recognition**: Uses **Google's Gemini API** for image and text-based identification.
+- **Multi-Input Support**: Accepts **image uploads** and **text descriptions**.
+- **Detailed Hardware Insights**: Provides **specifications, compatibility info, and market availability**.
+- **Automated Data Retrieval**: Fetches component details from sources like **PCPartPicker** or manufacturer databases.
+- **Fast & Efficient**: Real-time component recognition with optimized performance.
+- **Expandable & Customizable**: Easily extendable for more hardware categories and integrations.
 
-## 🔥 Features:
+## 💡 Why Use Gemini Hardware Identifier?
+- **For PC Builders**: Identify components instantly and get recommended builds.
+- **For Repair Technicians**: Quickly determine part compatibility and replacements.
+- **For Enthusiasts & Resellers**: Fetch specifications and compare hardware without manual searches.
 
-- **AI-Powered**: Uses advanced algorithms to suggest the best PC builds tailored to your needs.
-- **Budget-Friendly**: Get a build within your price range, without compromising performance.
-- **Compatibility Check**: Ensure all components are compatible, so you never run into those frustrating "doesn’t fit" problems.
-- **Latest Tech**: Features components from the latest releases like Intel i3 to i9, and the latest Nvidia and AMD GPUs (RTX 20 series to 40 series).
-- **Comprehensive**: Includes everything from CPU to cooling systems, power supplies, and cases.
+## 📝 How to Use
 
-## 💡 Why AI PC Configurator?
+### **1. Clone the Repository**
+```bash
+git clone https://github.com/Mohammed-Farhat/AI-Hardware-Identifier.git
+```
 
-Tired of endless research trying to figure out which components work best for your needs? With AI PC Configurator, you’ll get the peace of mind that comes with knowing your build is optimized for performance, price, and compatibility—**automatically**!
+## 📂 Project Structure
+- **/data/** → Stores sample images and metadata.
+- **/scripts/** → Python scripts for AI processing.
+- **recognize_component.py** → Main script for hardware recognition.
 
-## 📝 How to Use:
+## ⚡️ Built With
+- **Python** → Core programming language.
+- **Google Gemini API** → AI-powered hardware recognition.
+- **OpenCV / PIL** → Image processing for hardware detection.
+- **Flask / FastAPI** → API support for web-based usage.
+- **Pandas** → Data handling and analysis.
 
-1. **Clone this repo**:
-   ```bash
-   git clone https://github.com/Mohammed-Farhat/AI-PC-Configurator.git
-   ```
-2. **Set your budget or components**: Input your budget or some components you want to use.
-3. **Let the AI work its magic**: Get your perfectly optimized PC build, right in front of you!
 
-## 📂 Project Structure:
-- **/data**: Contains datasets of components with their specifications, prices, and performance benchmarks.
-- **/models**: The AI models that power the recommendations.
-- **/scripts**: The scripts that run the model and handle the user input.
-
-## ⚡️ Built With:
-- **Python**: For building the recommendation system.
-- **TensorFlow / PyTorch**: Deep learning frameworks for training the AI.
-- **Pandas**: For managing the datasets.
-- **NumPy**: For numerical computations and data manipulation.
 
 ## 💬 Feedback & Contributions
+We welcome contributions and feedback! Feel free to **open an issue** or submit a **pull request**.
 
-Have ideas for improvement or want to contribute? **We welcome pull requests!** Feel free to open an issue if you encounter any bugs or have suggestions.
+## 📢 Stay Updated
+- Follow the repository for the latest updates and improvements.
+- ⭐️ Star this project if you find it useful!
 
-## 📢 Stay Updated:
-- Follow the repo to stay up-to-date with the latest features and improvements!
-- Don't forget to ⭐️ the repo if you find it helpful!
+---
+🚀 **AI Hardware Identifier** - Making PC component recognition smarter with AI!

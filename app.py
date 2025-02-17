@@ -49,7 +49,7 @@ model = genai.GenerativeModel(
 response = model.generate_content([
     "What object is this? Describe how it might be used",
     "Object: The input is a PC hardware Image (any component related to computers)",
-    "Description: only state the name of the hardware and its type (e.g., Intel i7 10th Gen for a CPU, or RTX 3080 for a GPU). If the input is not related to PC hardware, respond with 'I can't help you with that.'",
+    "Description: Develop a model to accurately identify PC hardware components from images, including but not limited to processors, graphics cards, memory modules, and storage devices. The model should focus on specific characteristics like brand logos, form factors, and component features. The output should only be the exact name of the device, for example, 'i9 11th Gen' for a processor or 'ASUS B560 Motherboard' for a motherboard. Please note that assistance is strictly limited to identifying PC hardware components; if given any other images simply reply with   I cannot provide support for any other types of images or objects'",
     "Object: ",
     file,
     "​",

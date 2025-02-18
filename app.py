@@ -21,6 +21,14 @@ if not api_key:
     raise ValueError("API Key not found! Ensure you have a .env file with GEMINI_API_KEY set.")
 
 genai.configure(api_key=api_key)
+def save_output_to_file(content):
+    output_file_path = "output.txt"
+    
+    with open(output_file_path, "w", encoding="utf-8") as output_file:
+        output_file.write(content)
+    
+    print(f"\nGenerated Description saved to '{output_file_path}':")
+    print(content)
 
 def upload_to_gemini(path):
 
@@ -56,16 +64,18 @@ try:
 
     response = model.generate_content([
         "What object is this? Describe how it might be used",
-        "Object: The input is a PC hardware Image (any component related to computers)",
-        "Description: Develop a model to accurately identify PC hardware components from images, including but not limited to processors, graphics cards, memory modules, and storage devices. The model should focus on specific characteristics like brand logos, form factors, and component features. The output should only be the exact name of the device, for example, 'i9 11th Gen' for a processor or 'ASUS B560 Motherboard' for a motherboard. Please note that assistance is strictly limited to identifying PC hardware components; if given any other images simply reply with   I cannot provide support for any other types of images or objects'",
+        "Object: The input is a PC hardware Image (any hardware component related to computers)",
+        "Description: You are a computer parts expert. Develop a model to accurately identify PC hardware components from images, including but not limited to processors, graphics cards, motherboards, memory modules,  storage devices, and PSUs . The model should focus on specific characteristics like brand logos, form factors, and component features. The output should only be the exact name of the device, do not give anything more than the exact name for example, 'intel core i9 11th Gen' for a processor or 'ASUS B560 Motherboard' for a motherboard or 'MSI 3070ti' for a GPU. Please note that assistance is strictly limited to identifying PC hardware components; if given any other images simply reply with   I cannot provide support for any other types of images or objects'",
         "Object: ",
         file,
         "​",
         "Description: ",
     ])
 
-    print("\nGenerated Description:")
-    print(response.text)
+
+    generated_text = response.text.strip()
+    save_output_to_file(generated_text)
+
 
 except FileNotFoundError:
     print(f"Error: File '{file_path}' not found. Please check the path.")

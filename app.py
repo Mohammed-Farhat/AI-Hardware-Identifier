@@ -11,13 +11,23 @@ if not api_key:
     raise ValueError("API Key not found! Ensure you have a .env file with GEMINI_API_KEY set.")
 
 genai.configure(api_key=api_key)
+from dotenv import load_dotenv
+import mimetypes
+
+
+load_dotenv()
+api_key = os.getenv("GEMINI_API_KEY")
+
+if not api_key:
+    raise ValueError("API Key not found! Ensure you have a .env file with GEMINI_API_KEY set.")
+
+genai.configure(api_key=api_key)
 
 def upload_to_gemini(path):
 
     if not os.path.exists(path):
         raise FileNotFoundError(f"File '{path}' not found.")
 
-    # Auto-detect MIME type
     mime_type, _ = mimetypes.guess_type(path)
     if mime_type is None:
         raise ValueError("Could not determine MIME type. Please specify a valid image file.")
@@ -32,7 +42,6 @@ file_path = r"C:\Users\User\Pictures\Screenshots\Screenshot 2025-02-14 221948.pn
 try:
     file = upload_to_gemini(file_path)
 
-    # Configure the model
     generation_config = {
         "temperature": 1,
         "top_p": 0.95,
